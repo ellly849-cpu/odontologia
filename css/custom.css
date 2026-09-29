@@ -1,0 +1,161 @@
+/* ==========================================================================
+   LUMIÈRE DENTAL STUDIO - ESTILOS PERSONALIZADOS & REFINAMENTO UI/UX
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --gold-primary: #C8A870;
+  --gold-light: #E6D5B8;
+  --gold-dark: #9E7D47;
+  --cream-bg: #FAF9F5;
+  --charcoal: #18191B;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #2D3139;
+  background-color: #FAF9F5;
+}
+
+/* Tipografia Serif de Alto Padrão */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Gradiente Dourado Nobre para Textos */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFBE82 0%, #C8A870 50%, #9D7B43 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DDBB7F 0%, #C8A870 50%, #A37F41 100%);
+}
+
+.gold-gradient-bg:hover {
+  background: linear-gradient(135deg, #E5C78F 0%, #D4B47C 50%, #B28E50 100%);
+}
+
+/* Vidro Fosco / Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 168, 112, 0.2);
+}
+
+.glass-dark {
+  background: rgba(24, 25, 27, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 168, 112, 0.25);
+}
+
+/* Efeito Shimmer em Botões Premium */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.75s ease-in-out;
+}
+
+.btn-shimmer:hover::after {
+  left: 140%;
+}
+
+/* Cartões com Borda Dourada Suave e Elevação */
+.luxury-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(200, 168, 112, 0.18), 0 8px 16px -4px rgba(24, 25, 27, 0.04);
+  border-color: rgba(200, 168, 112, 0.5);
+}
+
+/* Animações de Scroll Reveal */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF9F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5C2A3;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8A870;
+}
+
+/* Selo Flutuante Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(200, 168, 112, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(200, 168, 112, 0.45);
+  }
+}
+
+.glow-subtle {
+  animation: pulse-glow 4s infinite ease-in-out;
+}
+
+/* Input Focus Gold */
+.form-input-luxury:focus {
+  border-color: #C8A870;
+  box-shadow: 0 0 0 3px rgba(200, 168, 112, 0.18);
+  outline: none;
+}
+
+/* Animação Fade-in para Feedback do Formulário */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
